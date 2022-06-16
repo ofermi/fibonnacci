@@ -23,6 +23,7 @@ jobs:
            echo secrets.DOCKER_USER 
            echo secrets.DOCKER_PASSWORD 
            docker build . -f Dockerfile -t fibonacci:$(date +%s)
-           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+           
+           docker login -u 028892180 -p OFERmi111
            docker push fibonacci:$(date +%s)
 
