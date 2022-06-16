@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --f Dockerfile --t fibonacci:$(date +%s)
+      run: docker build . -f Dockerfile -t fibonacci:$(date +%s)
            docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
            docker push fibonacci:$(date +%s)
 
