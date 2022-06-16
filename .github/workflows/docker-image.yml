@@ -15,15 +15,15 @@ jobs:
     env:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}  
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
-
+      TAG: $(date +%s)
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-           echo secrets.DOCKER_USER 
-           echo secrets.DOCKER_PASSWORD 
-           docker build . -f Dockerfile -t fibonacci:$(date +%s)
+           
+           
+           docker build . -f Dockerfile -t fibonacci:TAG
            
            docker login -u 028892180 -p OFERmi111
-           docker push fibonacci:$(date +%s)
+           docker push fibonacci:TAG
 
